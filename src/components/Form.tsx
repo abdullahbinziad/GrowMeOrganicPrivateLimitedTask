@@ -27,7 +27,9 @@ const Form: React.FC = () => {
 
   const handleNavigateToSecondPage = () => {
     // Check if all necessary fields are filled
-    if (!name || !phoneNumber || !email) {
+    const userDetailsString = localStorage.getItem('userDetails');
+    if (!userDetailsString) {
+
       alert('Please enter all your details before accessing the second page.');
     } else {
       navigate('/secondpage');
