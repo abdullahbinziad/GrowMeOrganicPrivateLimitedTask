@@ -69,7 +69,7 @@ const Form: React.FC = () => {
         </Button>
       </form>
      
-      <Box mt={2}> {/* Adding spacing */}
+      <Box mt={2}> 
         <Button onClick={handleNavigateToSecondPage} variant="contained" color="secondary">
           Go to Second Page
         </Button>

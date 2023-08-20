@@ -12,6 +12,7 @@ interface Department {
 }
 
 const DepartmentBar: React.FC = () => {
+
   const allData: Department[] = [
     {
         "department": "customer_service",
@@ -38,10 +39,10 @@ const DepartmentBar: React.FC = () => {
   const handleCategoryChange = (index: number) => (event: React.ChangeEvent<HTMLInputElement>) => {
     const newChecked = [...checked];
     newChecked[index] = event.target.checked;
-
+  
     const newSubChecked = [...subChecked];
     newSubChecked[index] = newSubChecked[index].map(() => event.target.checked);
-
+  
     setChecked(newChecked);
     setSubChecked(newSubChecked);
   };
@@ -69,9 +70,9 @@ const DepartmentBar: React.FC = () => {
     <div>
       {allData.map((data, index) => (
         
-        <div key={index}>
+        <div style={{marginLeft:'6px'}} key={index}>
               {expanded[index] ? (
-            <ExpandLessIcon onClick={handleExpandToggle(index)} />
+            <ExpandLessIcon  onClick={handleExpandToggle(index)} />
           ) : (
             <ExpandMoreIcon onClick={handleExpandToggle(index)} />
           )}
@@ -79,6 +80,9 @@ const DepartmentBar: React.FC = () => {
             label={data.department}
             control={
               <Checkbox
+           
+             
+             
                 checked={checked[index]}
                 indeterminate={subChecked[index].some(value => value) && !subChecked[index].every(value => value)}
                 onChange={handleCategoryChange(index)}
