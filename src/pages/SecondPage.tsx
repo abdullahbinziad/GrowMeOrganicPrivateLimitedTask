@@ -1,8 +1,11 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Box from '@mui/material/Box';
+
 
 import MyDataGrid from '../components/MyDataGrid';
 import { Container, Typography } from '@mui/material';
+import DepartmentBar from '../components/DepartmentBar';
 
 const SecondPage: React.FC = () => {
   const navigate = useNavigate();
@@ -21,6 +24,15 @@ const SecondPage: React.FC = () => {
 
         <Typography variant='h2' align='center' margin={5} fontWeight={1}>Second Page Data Table</Typography>
       <MyDataGrid/>
+
+  
+
+<main>
+<Box margin={6}>
+<DepartmentBar/>
+    </Box>
+</main>
+
     </Container>
   );
 };
